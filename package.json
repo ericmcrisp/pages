@@ -1,0 +1,28 @@
+{
+  "name": "pages",
+  "version": "1.0.0",
+  "description": "basic webpage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericmcrisp/pages.git"
+  },
+  "keywords": [
+    "CSS",
+    "HTML",
+    "Node.js"
+  ],
+  "author": "Eric Crisp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericmcrisp/pages/issues"
+  },
+  "homepage": "https://github.com/ericmcrisp/pages#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
