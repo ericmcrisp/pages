@@ -1,0 +1,30 @@
+# macOS system files
+.DS_Store
+
+# Node.js (if you ever add npm tools)
+node_modules/
+npm-debug.log
+
+# Python HTTP server cache
+__pycache__/
+
+# VSCode or other editor settings
+.vscode/
+.idea/
+
+# Build or temp folders
+dist/
+build/
+*.log
+
+# PDF backups or LaTeX temp files (if using LaTeX)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+
+# Files you generate but don't want in the repo
+*.tmp
+*.bak
