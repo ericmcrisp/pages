@@ -21,12 +21,12 @@
   <script>
     // Correct path to the worker and the PDF
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/js/pdf.worker.js';
-    const url = '../tex/custom.pdf';
+    const url = '../tex/CrispEric-Resume.pdf';
 
     // Load and render PDF
     pdfjsLib.getDocument(url).promise
     .then(pdf => {
-      return pdf.getPage(1); // Get page 1
+      return pdf.getPage(1); 
     })
     .then(page => {
       const scale = 1.5;
