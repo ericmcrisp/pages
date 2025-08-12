@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
-    <link rel="stylesheet" href="./assets/css/styles/main_design_to_this.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles/main_design_to_this.css" />
+
 </head>
 <body class="is-preload">
     
@@ -13,87 +15,8 @@
     <div id="wrapper">
 
         <!-- Header -->
-            <header id="header">
+        <div id="header-comp"></div>
 
-                <h1><a href="index.html">Welcome To My Website</a></h1>
-                    <nav class="links">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="./frontend/about.html">About Me</a></li>
-                            <li><a href="./frontend/resume.html">Resume</a></li>
-                            <li><a href="./frontend/blogs.html">Blog</a></li>
-                            <li><a href="./frontend/contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <nav class="main">
-                        <ul>
-                            <li class="search">
-                                <a class="fa-search" href="#search">Search</a>
-                                <form id="search" method="get" action="#">
-                                    <input type="text" name="query" placeholder="Search" />
-                                </form>
-                            </li>
-                            <li class="menu">
-                                <a class="fa-bars" href="#menu">Menu</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
-
-            <!-- Menu -->
-                <section id="menu">
-
-                    <!-- Search -->
-                        <section>
-                            <form class="search" method="get" action="#">
-                                <input type="text" name="query" placeholder="Search" />
-                            </form>
-                        </section>
-
-                    <!-- Links -->
-                    <section>
-                        <ul class="links">
-                            <li>
-                                <a href="index.html">
-                                    <h3>Home</h3>
-                                    <p>Welcome page with links to all sections of the site.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./frontend/about.html">
-                                    <h3>About Me</h3>
-                                    <p>A brief background, experience, and mission statement.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./frontend/resume.html">
-                                    <h3>Resume</h3>
-                                    <p>View or download my professional resume.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./frontend/blogs.html">
-                                    <h3>Blog</h3>
-                                    <p>Articles and insights on development, design, and more.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./frontend/contact.html">
-                                    <h3>Contact</h3>
-                                    <p>Get in touch via email or social links.</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- Actions 
-                        <section>
-                            <ul class="actions stacked">
-                                <li><a href="#" class="button large fit">Log In</a></li>
-                            </ul>
-                        </section>
-                    -->
-                </section>
 
             <!-- Main -->
                 <div id="main">
@@ -136,6 +59,14 @@
                 </div>
 
         <!-- Scripts -->
+        <script>
+        fetch('/frontend/assets/components/header.html')
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById('header-comp').innerHTML = html;
+            });
+        </script>
+
         <script src="./frontend/assets/js/jquery.min.js"></script>
         <script src="./frontend/assets/js/browser.min.js"></script>
         <script src="./frontend/assets/js/breakpoints.min.js"></script>

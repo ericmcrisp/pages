@@ -3633,3 +3633,16 @@ input, select, textarea {
   justify-content: flex-start;
   gap: 8px;
 }
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center;     /* vertically center (if parent has height) */
+  height: 100px;           /* optional: controls container height */
+}
+
+.custom-icon {
+  width: 100px;             /* control width */
+  height: auto;            /* maintain aspect ratio */
+  object-fit: contain;     /* scale image without distortion */
+}
