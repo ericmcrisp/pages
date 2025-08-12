@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Viewer</title>
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles/main_design_to_this.css">
+</head>
+<body>
+  <canvas id="pdf-canvas"></canvas>
+
+  <script src="assets/js/pdf.js"></script>
+  
+  <script>
+    // Correct path to the worker and the PDF
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/js/pdf.worker.js';
+    const url = '../tex/CrispEric-Resume.pdf';
+
+    // Load and render PDF
+    pdfjsLib.getDocument(url).promise
+    .then(pdf => {
+      return pdf.getPage(1); 
+    })
+    .then(page => {
+      const scale = 1.5;
+      const viewport = page.getViewport({ scale });
+  
+      const canvas = document.getElementById('pdf-canvas');
+      const context = canvas.getContext('2d');
+  
+      // Handle Retina/high-DPI displays
+      const outputScale = window.devicePixelRatio || 1;
+  
+      canvas.width = Math.floor(viewport.width * outputScale);
+      canvas.height = Math.floor(viewport.height * outputScale);
+      canvas.style.width = `${viewport.width}px`;
+      canvas.style.height = `${viewport.height}px`;
+  
+      const renderContext = {
+        canvasContext: context,
+        viewport: viewport,
+        transform: outputScale !== 1
+          ? [outputScale, 0, 0, outputScale, 0, 0]
+          : undefined
+      };
+  
+      // Return the render promise so catch() can handle errors
+      return page.render(renderContext).promise;
+    })
+    .catch(err => {
+      console.error('Error loading or rendering PDF:', err);
+    });
+  
+  </script>
+</body>
+</html>

@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Resume Viewer</title>
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 25px;
-    }
-    canvas { border: none; }
-  </style>
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles/main_design_to_this.css">
 </head>
 <body>
-  <canvas id="pdf-canvas"></canvas>
 
-  <script src="assets/js/pdf.js"></script>
+  <!-- Header -->
+  <div id="header-comp"></div >
+  
+  <canvas id="pdf-canvas"></canvas>
+  
+    <script src="../assets/js/pdf.js"></script>
+  
   <script>
     // Correct path to the worker and the PDF
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/js/pdf.worker.js';
-    const url = '../tex/CrispEric-Resume.pdf';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '../assets/js/pdf.worker.js';
+    
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '../assets/js/pdf.worker.js';
+
+    const fileName = getQueryParam('file') || 'software.pdf';
+    const url = `../assets/resumes/${fileName}`;
 
     // Load and render PDF
     pdfjsLib.getDocument(url).promise
@@ -59,5 +65,14 @@
     });
   
   </script>
+
+  <script>
+    fetch('../assets/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-comp').innerHTML = html;
+      });
+  </script>
+
 </body>
 </html>

@@ -3409,6 +3409,7 @@ input, select, textarea {
 
 		}
 
+
 /* Intro */
 
 	#intro .logo {
@@ -3609,3 +3610,26 @@ input, select, textarea {
 			}
 
 		}
+
+#pdf-canvas {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid #000;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+
+.download-icon {
+  margin-right: 10px;  
+  font-size: 1.2em;     
+  color: #333;          
+  vertical-align: middle;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}

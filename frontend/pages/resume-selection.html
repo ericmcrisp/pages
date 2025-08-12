@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume Selection</title>
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/styles/main_design_to_this.css" />
+</head>
+<body>
+
+  
+  <!-- Header -->
+  <div id="header-comp"></div>
+  
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2>Select a Resume</h2>
+        <p>Choose the field-tailored resume you'd like to view.</p>
+      </div>
+    </header>
+
+    <ul class="actions stacked" id="resume-list">
+      <li>
+        <a href="resume-viewer.html?file=software.pdf" class="button large">Software Engineering</a>
+        <!-- Download button will be added here dynamically -->
+      </li>
+      <li>
+        <a href="resume-viewer.html?file=airesearch.pdf" class="button large">AI/ML Research and Development</a>
+      </li>
+      <li>
+        <a href="resume-viewer.html?file=datascience.pdf" class="button large">Data Science</a>
+      </li>
+      <li>
+        <a href="resume-viewer.html?file=aerospace.pdf" class="button large">Aerospace and Mechanical Engineering</a>
+      </li>
+    </ul>
+  </article>
+
+  <script type="module">
+  const resumeList = document.getElementById('resume-list');
+  const resumeFiles = [
+    'software.pdf',
+    'airesearch.pdf',
+    'datascience.pdf',
+    'aerospace.pdf'
+  ];
+
+  const resumeItems = resumeList.querySelectorAll('li');
+
+  resumeItems.forEach((li, index) => {
+    const fileName = resumeFiles[index];
+    const downloadLink = document.createElement('a');
+    downloadLink.href = `../assets/resumes/${fileName}`;
+    downloadLink.setAttribute('download', '');
+    downloadLink.setAttribute('aria-label', 'Download Resume');
+    downloadLink.classList.add('download-icon');
+
+    const icon = document.createElement('i');
+    icon.classList.add('fas', 'fa-download');
+    downloadLink.appendChild(icon);
+
+    downloadLink.style.marginLeft = '10px';
+    downloadLink.style.fontSize = '1em';
+
+    li.querySelector('a').before(downloadLink);
+  });
+  </script>
+
+  <script>
+  fetch('/frontend/assets/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+      document.getElementById('header-comp').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>
