@@ -7,7 +7,7 @@ export function loadHeader() {
   fetch(headerPath)
     .then(res => res.text())
     .then(html => {
-      document.getElementById('header-placeholder').innerHTML = html;
+      document.getElementById('header-component').innerHTML = html;
       setNavLinks(); // Adjust the links after loading
     });
 }

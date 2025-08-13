@@ -59,13 +59,10 @@
                 </div>
 
         <!-- Scripts -->
-        <script>
-        fetch('../assets/components/header.html')
-            .then(res => res.text())
-            .then(html => {
-            document.getElementById('header-comp').innerHTML = html;
-            });
-        </script>
+		<script type="module">
+			import { loadHeader } from '../assets/components/headerLoader.js';
+			loadHeader();
+		</script>
 
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/browser.min.js"></script>
