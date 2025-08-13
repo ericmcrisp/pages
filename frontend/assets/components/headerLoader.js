@@ -1,8 +1,8 @@
 // /frontend/components/headerLoader.js
 export function loadHeader() {
   const headerPath = window.location.pathname.includes('/frontend/pages/')
-    ? '../components/header.html'
-    : 'frontend/components/header.html';
+    ? '../assets/components/header.html'
+    : 'frontend/assets/components/header.html';
 
   fetch(headerPath)
     .then(res => res.text())

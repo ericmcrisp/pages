@@ -16,7 +16,7 @@
         <div id="wrapper">
 
             <!-- Header -->
-            <div id="header-comp"></div>
+            <div id="header-placeholder"></div>
             
 
             <!-- Menu - being replaced by navbar.html component --->
@@ -128,17 +128,17 @@
         });
         </script> -->
         <script type="module">
-            import { loadHeader } from './frontend/components/headerLoader.js';
+            import { loadHeader } from './frontend/assets/components/headerLoader.js';
             loadHeader();
         </script>
 
-        <script>
+        <!-- <script>
         fetch('./frontend/assets/components/header.html')
             .then(res => res.text())
             .then(html => {
             document.getElementById('header-comp').innerHTML = html;
             });
-        </script>
+        </script> -->
 
 
         <script src="./frontend/assets/js/jquery.min.js"></script>
