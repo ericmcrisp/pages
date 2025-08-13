@@ -10,7 +10,7 @@
 
   
   <!-- Header -->
-  <div id="header-comp"></div>
+  <div id="header-component"></div>
   
   <article class="post">
     <header>
@@ -40,10 +40,10 @@
   <script type="module">
   const resumeList = document.getElementById('resume-list');
   const resumeFiles = [
-    'software.pdf',
-    'airesearch.pdf',
-    'datascience.pdf',
-    'aerospace.pdf'
+    'software/SoftwareEngineer_EricCrisp.pdf',
+    'ai-research/AIResearch_EricCrisp.pdf',
+    'datascience/DataScience_EricCrisp.pdf',
+    'aerospace/AerospaceEngineer_EricCrisp.pdf'
   ];
 
   const resumeItems = resumeList.querySelectorAll('li');
@@ -51,7 +51,7 @@
   resumeItems.forEach((li, index) => {
     const fileName = resumeFiles[index];
     const downloadLink = document.createElement('a');
-    downloadLink.href = `../assets/resumes/${fileName}`;
+    downloadLink.href = `../../tex/${fileName}`;
     downloadLink.setAttribute('download', '');
     downloadLink.setAttribute('aria-label', 'Download Resume');
     downloadLink.classList.add('download-icon');

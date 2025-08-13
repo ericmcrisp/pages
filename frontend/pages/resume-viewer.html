@@ -25,9 +25,19 @@
     }
 
     pdfjsLib.GlobalWorkerOptions.workerSrc = '../assets/js/pdf.worker.js';
-
     const fileName = getQueryParam('file') || 'software.pdf';
-    const url = `../assets/resumes/${fileName}`;
+
+    const fileMap = {
+      'software.pdf': 'software/SoftwareEngineer_EricCrisp.pdf',
+      'airesearch.pdf': 'ai-research/AIResearch_EricCrisp.pdf',
+      'datascience.pdf': 'datascience/DataScience_EricCrisp.pdf',
+      'aerospace.pdf': 'aerospace/AerospaceEngineer_EricCrisp.pdf'
+    };
+
+    const filePath = fileMap[fileName] || fileMap['software.pdf'];
+    const url = `../../tex/${filePath}`;
+
+    console.log('Loading PDF from URL:', url);
 
     // Load and render PDF
     pdfjsLib.getDocument(url).promise
