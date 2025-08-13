@@ -97,6 +97,11 @@
 				</footer>
 			</div>
 		<!-- Scripts -->
+		<script type="module">
+			import { loadHeader } from '../components/headerLoader.js';
+			loadHeader();
+		</script>
+
 		<script>
 		fetch('../assets/components/header.html')
 			.then(res => res.text())
