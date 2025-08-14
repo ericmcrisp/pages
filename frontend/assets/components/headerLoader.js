@@ -1,6 +1,6 @@
 export function loadHeader() {
   // Load header.html relative to current page location
-const isSubpage = window.location.pathname.includes('/frontend/pages/');
+const isSubpage = window.location.pathname.includes('frontend/pages/');
   const headerPath = isSubpage
     ? '../assets/components/header.html'
     : 'frontend/assets/components/header.html';
