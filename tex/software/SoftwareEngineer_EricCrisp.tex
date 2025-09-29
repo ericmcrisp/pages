@@ -103,7 +103,7 @@
 %
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
-% \pagestyle{empty}      % Uncomment this to get rid of page numbers
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfootoffset{\marginparsep+\marginparwidth}
 \newlength{\footpageshift}
@@ -160,7 +160,7 @@
 % empty lines allows for the function of the first example with the
 % readability of the second example.
 \renewcommand{\section}[2]%
-        {\pagebreak[3]\vspace{1.3\baselineskip}%
+        {\pagebreak[3]\vspace{0.75\baselineskip}%
          \phantomsection\addcontentsline{toc}{section}{#1}%
          \hspace{0in}%
          \marginpar{
@@ -223,41 +223,41 @@
 %
 %\begin{tabular}[t]{@{}p{\textwidth-\rcollength-2.3in}p{2.3in}p{\rcollength}}
 \begin{tabular}[t]{@{}p{4.2in}p{3.5in}}
-\email{ecrisp@upenn.edu} & \url{ericmcrisp.github.io/pages} \\
-(302) 528-2477 & \url{linkedin.com/in/ecrisp}
+\email{ecrisp@upenn.edu} & \url{linkedin.com/in/ecrisp} \\ % & \url{ericmcrisp.github.io/pages}
+(302) 528-2477 \\
 \end{tabular}
 
 \section{Education}
   \textbf{University of Pennsylvania}, Philadelphia, PA
   \hfill Jan 2025 - Dec 2025 \\
-  \-\quad \textbf{M.Sc., Data Science}
+  \-\quad \textbf{M.Sc., Data Science} % \hfill GPA: 3.5
 
   \blankline
 
   \textbf{Pennsylvania State University}, State College, PA
   \hfill Aug 2015 - May 2021 \\
-  \-\quad \textbf{M.Sc., Mechanical Engineering} \\ % \hfill GPA: 4.0
-  \-\quad \textbf{B.Sc., Aerospace Engineering} % \hfill GPA: 3.6 
+  \-\quad \textbf{M.Sc., Mechanical Engineering} \\ % \hfill GPA: 3.9 \\
+  \-\quad \textbf{B.Sc., Aerospace Engineering} % \hfill GPA: 3.4
 
 \section{Technical Skills}
-    \begin{minipage}[t]{.3\textwidth}
+    \begin{minipage}[t]{.25\textwidth}
     \textbf{Programming} \\
     \verb|Python, C++, MATLAB| \\
     \verb|JavaScript|
     \end{minipage}
-    \begin{minipage}[t]{.4\textwidth}
-    \textbf{Data Science, AI/ML} \\
+    \begin{minipage}[t]{.5\textwidth}
+    \textbf{Frameworks} \\
     \verb|TensorFlow, PyTorch, Scikit-learn| \\
-    \verb|SQL, Spark, Pandas, Numpy|
+    \verb|SQL, Spark, Pandas, Numpy, React, Node|
     \end{minipage}
-    \begin{minipage}[t]{.3\textwidth}
+    \begin{minipage}[t]{.25\textwidth}
     \textbf{Tools \& DevOps} \\
-    \verb|Docker, AWS, CI| \\
-    \verb|Git, React, Node|
+    \verb|Docker, AWS | \\
+    \verb|Git, CI\CD |
     \end{minipage}
 
-\section{Summary}
-I am looking to transition into a role related to AI development. I am grateful to have had many opportunities throughout my career to develop engineering, communication, analytical skills along with leadership experience that blend well with the foundational AI/ML skills and knowledge developed at the Penn.
+% \section{Summary}
+% I am looking to transition into a data scientist role. I am grateful to have had many opportunities throughout my career to develop engineering, communication, analytical skills along with leadership experience that blend well with the foundational AI/ML skills and knowledge developed at the Penn.
 
 % \section{Papers}
 
@@ -271,7 +271,7 @@ I am looking to transition into a role related to AI development. I am grateful 
 
 
 \section{Experience}
-\textbf{Lead Aerospace Engineer, Real-Time Modeling}
+\textbf{Aerospace Engineer III, Real-Time Modeling}
 \hfill Apr 2022 -- Nov 2024 \\
 \textbf{Blue Origin, Seattle, WA} \\
 $\bullet$ Led a small, multi-disciplined team responsible for all RTM (real-time model) activities across Blue Origin. \\
@@ -296,26 +296,41 @@ $\bullet$ Enhanced engine test visibility with automated visualizations of the e
 
 % \blankline
 
-\section{Personal and Academic Projects}
-\textbf{Fundamental Physics Models from Physics Informed Neural Networks}
-\hfill Jul 2025 -- Present \\ 
-$\bullet$ Investigating neural-symbolic approaches that combine Physics-Informed Neural Networks (PINNs) with transformer-based code generation models to model physical situations. \\
-$\bullet$ Developing neural networks to automatically generate simulation code for simple physics problems, leveraging deep learning to bridge theoretical physics with computational implementation. \\
-$\bullet$ Creating evaluation framework to identify where AI-generated simulations violate fundamental conservation laws (energy, mass, momentum), providing insights into model limitations in implementing within scientific computing domains.
+\section{Projects}
+
+
+\textbf{Statistical Fact Verification System} \hfill Aug 2025 -- Present \\
+$\bullet$ Developing end-to-end fact-checking pipeline that integrates AI response generation with statistical verification using FEVER dataset and Wikipedia API for real-time evidence retrieval. \\
+$\bullet$ Implementing fine-tuned transformer-based models (BERT/RoBERTa) for claim classification against standard benchmarks with confidence scoring and multi-evidence aggregation. \\
+$\bullet$ Building containerized production web application using Python, FastAPI, and Streamlit hosted on AWS and version controlld with CI\textbackslash CD. \\
+$\bullet$ Created an NLP pipeline (spaCy, nltk, HuggingFace Transformers) for automatic factual claim detection, named entity recognition, and evidence-based verification from multiple sources.
+
+% \blankline
+
+% \textbf{Physics-Informed Neural Network Approach to Parameter Estimation}
+% \hfill Aug 2025 -- Present \\
+% $\bullet$ Investigating the use of neural approaches to solve parameter estimation from systems of linear differential equations. \\
+% $\bullet$ Developing PINN architectures and supporting functionality from scratch while selectively leveraging open-source libraries including PyTorch, JAX, and CoolProp.
 
 \blankline
 
 \textbf{Machine Learning Pipeline for Food Classification and Health Scoring}
-\hfill May 2025 -- Jul 2025 \\ 
-$\bullet$ Built an end-to-end ML pipeline to classify food items and generate health scores using supervised learning algorithms, with model optimization through GridSearchCV hyperparameter tuning achieving 91\% accuracy on test data. \\
-$\bullet$ Implemented comprehensive data preprocessing using Pandas for large-scale dataset manipulation, NLP techniques for ingredient text processing and nutritional analysis, normalization, imputing, and encoding for PCA analysis and created visualizations with Seaborn and Matplotlib to present process results.
+\hfill Jun 2025 -- Jul 2025 \\ 
+$\bullet$ Built an ML pipeline to classify food items and generate health scores using supervised learning algorithms, with model optimization through GridSearchCV hyperparameter tuning achieving 91\% accuracy on test data. \\
+$\bullet$ Implemented comprehensive data preprocessing using Pandas for large-scale dataset manipulation, NLTK for ingredient text processing and nutritional analysis, applied normalization, imputation, and encoding for PCA, and automated visualizations in postprocessing with Seaborn and Matplotlib.
+
+\blankline
+
+\textbf{Restaurant Reccomendation System}
+\hfill May 2025 -- Jun 2025 \\ 
+$\bullet$ Built a full-stack application using AWS RDS, React, Node.js, SQL, PostgreSQL, and NLTK to create a series of recomendation systems to help users identify restaurants in their location, discover similar options, and receive personalized meal and restaurant suggestions. \\
+$\bullet$ Processed and integrated large-scale datasets containing millions of records (text and images) into a PostgreSQL database on AWS RDS, implementing optimized SQL queries and RESTful APIs to serve real-time recommendations to users.
 
 % \blankline
 
-% \textbf{Full Stack Reccomendation System}
+% \textbf{Game Q-Learning}
 % \hfill May 2025 -- Jul 2025 \\ 
-% $\bullet$ Built a full-stack application using AWS RDS, React, Node.js, and NLP to help users identify restaurants in their city, discover similar options, and receive personalized meal and restaurant suggestions. \\
-% $\bullet$ Processed and integrated large-scale datasets (Yelp, recipe data, Kaggle sources) containing millions of records into a PostgreSQL database on AWS RDS, implementing optimized queries and RESTful APIs to serve real-time recommendations to users.
+% $\bullet$ Built a full-stack application using AWS RDS, React, Node.js, and NLP to help users identify restaurants in their city, discover similar options, and receive personalized meal and restaurant suggestions.
 
 % \blankline
 
@@ -339,7 +354,7 @@ $\bullet$ Implemented comprehensive data preprocessing using Pandas for large-sc
 \section{Awards and Activities}
   \textbf{Blue Origin Engines Challenge Award}
   \hfill Jul 2022 \\
-  Awarded for technical successes in developing the real-time modeling capabilities at Blue Origin.
+  Awarded for technical successes in developing the real-time modeling (RTM) capabilities at Blue Origin.
 
 %   \textbf{Blue Origin Liftoff Award}
 %   \hfill Jan 2023 \\
